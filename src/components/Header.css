@@ -1,0 +1,40 @@
+
+.header-container{
+    height: 20%;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.logo-container{
+    height: 90%;
+    width: 30%;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+.logo{
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+    border-radius: 10rem;
+}
+.logo-container:hover .logo{
+    transform: scale(1.5)  rotateY(360deg);
+}
+.nav-container{
+    width: 40%;
+}
+.nav-container__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.nav-container__item{
+    list-style: none;
+    font-size: 1.6rem;
+}
+.nav-container__item:hover{
+    color: red;
+}
