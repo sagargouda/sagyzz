@@ -19,6 +19,7 @@
     object-fit: cover;
     transition: transform 0.5s ease-in-out;
     border-radius: 10rem;
+
 }
 .logo-container:hover .logo{
     transform: scale(1.5)  rotateY(360deg);
@@ -33,7 +34,7 @@
 }
 .nav-container__item{
     list-style: none;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
 }
 .nav-container__item:hover{
     color: red;
