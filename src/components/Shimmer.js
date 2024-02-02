@@ -1,3 +1,5 @@
+
+import './Shimmer.css'
 export default function Shimmer(){
     return (
         <div className="shimmer-container">
@@ -8,7 +10,13 @@ export default function Shimmer(){
             <div className="shimmer"></div>
             <div className="shimmer"></div>
             <div className="shimmer"></div>
-
+            <div className="shimmer"></div>
+            <div className="shimmer"></div>
+            <div className="shimmer"></div>
+            <div className="shimmer"></div>
+            <div className="shimmer"></div>
+            <div className="shimmer"></div>
+            <div className="shimmer"></div>
         </div>
     )
 }
