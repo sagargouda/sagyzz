@@ -3,7 +3,7 @@ export default function Header(){
     return(
     <div className="header-container">
         <div className="logo-container">
-            <img src={require('./saglogo.png')} alt="sagyzz-logo" className="logo"/>
+            <img src={require('./logos.png')} alt="sagyzz-logo" className="logo"/>
         </div>
         <div className="nav-container">
             <ul className="nav-container__list">
