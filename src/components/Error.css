@@ -1,0 +1,31 @@
+.error-content {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid hsl(0, 0%, 7%);
+    border-radius: 5px;
+    box-shadow: 0.6rem 0.6rem hsl(0, 0%, 0%);
+    background: #f2f2f2;
+    margin-top: 3rem;
+}
+
+.error-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ff5555;
+}
+
+.error-message {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.error-image {
+    max-width: 60%; /* Adjusted max-width */
+    margin: 15px 0;
+}
+
+.error-hint {
+    font-size: 1rem;
+    color: #555;
+}
