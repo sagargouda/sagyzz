@@ -42,3 +42,19 @@
     color: red;
 }
 
+.nav-link{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background-color: #f2f2f2;
+}
+
+.nav-link.active {
+    background-color: #04AA6D;
+    color: white;
+}
