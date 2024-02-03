@@ -1,4 +1,9 @@
-.container{
+.rest-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
     width: 27rem;
     height: auto;
     border: 1px solid hsl(0, 0%, 7%);
@@ -12,6 +17,7 @@
     cursor: pointer;
     transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
+
 .container:hover {
     box-shadow: 0.8rem 0.8rem hsl(0, 0%, 0%);
     transform: translateY(3px);
@@ -20,20 +26,24 @@
 .container:active {
     box-shadow: 1rem 1rem hsl(0, 0%, 0%);
     transform: translateY(6px);
+    color: red;
 }
-.image-container{
+
+.image-container {
     width: 100%;
     height: 15rem;
     border-radius: 1rem;
     margin-bottom: 1.4rem;
     overflow: hidden;
 }
-.image{
+
+.image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.content-container{
+
+.content-container {
     height: auto;
     display: flex;
     flex-direction: column;

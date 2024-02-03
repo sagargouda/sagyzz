@@ -3,6 +3,7 @@ import './Body.css';
 import RestCard from "./RestCard";
 import {useCallback, useEffect, useState} from "react";
 import Shimmer from "./Shimmer";
+import {Link} from "react-router-dom";
 
 export default function Body() {
     const [rests, setRests] = useState([])
@@ -59,7 +60,7 @@ export default function Body() {
                 <div className="searchInput">
                     <input type="text" placeholder="Search Restaurants Here" id="inp" value={name}
                            onChange={(e) => handleInputChange(e)}/>
-                    <button className="button" onClick={() => handleSearch()}>Search</button>
+                    {/*<button className="button" onClick={handleSearch}>Search</button>*/}
                 </div>
 
             </div>
@@ -71,7 +72,7 @@ export default function Body() {
                         ) :
 
                         filterRests.map((rest) => {
-                        return <RestCard key={rest.info.id} resData={rest}/>
+                        return <Link className="rest-card-link" key={rest.info.id} to={"/restaurants/" + rest.info.id}><RestCard  resData={rest}/></Link>
                     })
 
                 }
