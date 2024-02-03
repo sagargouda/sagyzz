@@ -1,17 +1,17 @@
 .error-content {
     text-align: center;
-    max-width: 400px;
+    max-width: 40rem;
     margin: 0 auto;
     border: 1px solid hsl(0, 0%, 7%);
     border-radius: 5px;
     box-shadow: 0.6rem 0.6rem hsl(0, 0%, 0%);
     background: #f2f2f2;
-    margin-top: 3rem;
+    padding: 2rem;
 }
 
 .error-title {
     font-size: 2rem;
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
     color: #ff5555;
 }
 
@@ -21,11 +21,13 @@
 }
 
 .error-image {
-    max-width: 60%; /* Adjusted max-width */
-    margin: 15px 0;
+    max-width: 60%;
+    margin: 1.5rem auto;
+    display: block;
 }
 
 .error-hint {
     font-size: 1rem;
     color: #555;
+    margin-top: 1.5rem;
 }
