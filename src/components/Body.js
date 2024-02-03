@@ -1,13 +1,22 @@
 import './Body.css';
 
 import RestCard from "./RestCard";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import Shimmer from "./Shimmer";
 
-export default function Body(){
-  const[rests,setRests] = useState([])
-    const [filterRests , setFilterRests] = useState([])
-    const [name,setName] =useState("")
+export default function Body() {
+    const [rests, setRests] = useState([])
+    const [filterRests, setFilterRests] = useState([])
+    const [name, setName] = useState("")
+
+    //  function for searching restaurants
+    const handleSearch = useCallback(() => {
+        const searchFilter = rests.filter((rest) =>
+            rest.info.name.toLowerCase().includes(name.toLowerCase())
+        );
+        setFilterRests(searchFilter);
+    }, [name, rests]);
+
 
 
     useEffect(()=>{
@@ -26,7 +35,7 @@ export default function Body(){
         setFilterRests(ApiData)
     }
 
-    if(rests.length === 0){
+    if(rests?.length === 0){
      return  <Shimmer/>
     }
 
@@ -38,27 +47,21 @@ export default function Body(){
         setFilterRests(topRated);
     }
 
-    //  function for searching restaurants
-    function handleSearch(){
-        const searchFilter = rests.filter((rest)=>{
-            return rest.info.name.toLowerCase().includes(name.toLowerCase())
-        })
-            setFilterRests(searchFilter)
-    }
-
-
     function handleInputChange(e){
         setName(e.target.value)
     }
 
+
     return (
         <>
             <div className="search">
-                <button onClick={()=> handleTopRated()} className="button" >Top rated Button</button>
+                <button onClick={() => handleTopRated()} className="button">Top rated Button</button>
                 <div className="searchInput">
-                    <input type="text" placeholder="Search Restaurants Here" id="inp" value={name} onChange={(e) => handleInputChange(e)}/>
-                    <button className="button" onClick={()=>handleSearch()}>Search</button>
+                    <input type="text" placeholder="Search Restaurants Here" id="inp" value={name}
+                           onChange={(e) => handleInputChange(e)}/>
+                    <button className="button" onClick={() => handleSearch()}>Search</button>
                 </div>
+
             </div>
             <div className="body-container">
                 {

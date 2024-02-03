@@ -8,6 +8,7 @@
 
 html{
     font-size: 62.5%;
+
 }
 
 body{
@@ -16,9 +17,12 @@ body{
     /*background-color: hsl(47, 88%, 63%);*/
     line-height: 1.7;
     padding: 1rem;
+
+
 }
 
 .main-container{
-    height: 100vh;
+    height: 95vh;
     width: 100%;
+
 }

@@ -8,20 +8,18 @@
     flex-direction: column;
     padding: 1.5rem;
     background-color: hsl(0, 0%, 100%);
-    margin-right: 3rem;
-    margin-left: 3rem;
-    margin-top: 3rem;
+    margin: 3rem;
     cursor: pointer;
     transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
 .container:hover {
-    box-shadow: 0.7rem 0.7rem hsl(0, 0%, 0%);
-    transform: translateY(2px);
+    box-shadow: 0.8rem 0.8rem hsl(0, 0%, 0%);
+    transform: translateY(3px);
 }
 
 .container:active {
-    box-shadow: 0.6rem 0.6rem hsl(0, 0%, 0%);
-    transform: translateY(4px);
+    box-shadow: 1rem 1rem hsl(0, 0%, 0%);
+    transform: translateY(6px);
 }
 .image-container{
     width: 100%;
