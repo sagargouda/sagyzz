@@ -6,7 +6,6 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-
 }
 
 .shimmer{
@@ -18,8 +17,21 @@
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
-    background-color: hsl(0, 0%, 100%);
     margin: 3rem;
     cursor: pointer;
-    transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
+    background: linear-gradient(to right, #ddd 0%, #fff 50%, #ddd 100%);
+    background-size: 200% 100%;
+    animation: pulse 1.5s infinite linear;
+}
+
+@keyframes pulse {
+    0% {
+        /* start from fully right (relative to width of container)*/
+        background-position: 200% 0;
+    }
+
+    100% {
+        /*move to fully left*/
+        background-position: -200% 0;
+    }
 }
