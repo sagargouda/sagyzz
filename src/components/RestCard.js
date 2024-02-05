@@ -15,7 +15,7 @@ export default function RestCard({resData}){
                 </div>
 
                 <div className="content-container">
-                    <h3>{resData.info?.name}</h3>
+                    <h3>{resData.info?.name.length > 12 ? resData?.info?.name.slice(0,20) : resData?.info?.name }</h3>
                     <h5><span className="publish">{resData.info?.cuisines?.join(',')}</span></h5>
                     <h2> {resData.info.avgRating}⭐</h2>
                     <p>

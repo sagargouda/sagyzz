@@ -4,11 +4,13 @@ import RestCard from "./RestCard";
 import {useCallback, useEffect, useState} from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 export default function Body() {
     const [rests, setRests] = useState([])
     const [filterRests, setFilterRests] = useState([])
     const [name, setName] = useState("")
+    const onlineStatus = useOnlineStatus();
 
     //  function for searching restaurants
     const handleSearch = useCallback(() => {
@@ -52,6 +54,11 @@ export default function Body() {
         setName(e.target.value)
     }
 
+
+
+    if(onlineStatus === false){
+        return <h1>Looks like you are offline</h1>
+    }
 
     return (
         <>
