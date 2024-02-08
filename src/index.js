@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
@@ -8,7 +7,7 @@ import {createBrowserRouter , RouterProvider , Outlet} from "react-router-dom";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestMenu from "./components/RestMenu";
-
+import './index.css';
 function AppLayout() {
     return (
         <div className="main-container">

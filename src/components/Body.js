@@ -1,16 +1,19 @@
 import './Body.css';
 
-import RestCard from "./RestCard";
+import RestCard , {withFastLabel} from "./RestCard";
 import {useCallback, useEffect, useState} from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+
 
 export default function Body() {
     const [rests, setRests] = useState([])
     const [filterRests, setFilterRests] = useState([])
     const [name, setName] = useState("")
     const onlineStatus = useOnlineStatus();
+
+    const RestaurantCardFast = withFastLabel(RestCard)
 
     //  function for searching restaurants
     const handleSearch = useCallback(() => {
@@ -31,12 +34,15 @@ export default function Body() {
     }, [name,handleSearch]);
 
     async function fetchData(){
-     const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.019677&lng=76.111056&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+     const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const json = await response.json();
      const ApiData = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
         setRests(ApiData)
         setFilterRests(ApiData)
     }
+
+    console.log(rests)
+
 
     if(rests?.length === 0){
      return  <Shimmer/>
@@ -79,7 +85,12 @@ export default function Body() {
                         ) :
 
                         filterRests.map((rest) => {
-                        return <Link className="rest-card-link" key={rest.info.id} to={"/restaurants/" + rest.info.id}><RestCard  resData={rest}/></Link>
+                        return <Link className="rest-card-link" key={rest.info.id} to={"/restaurants/" + rest.info.id}>
+                            {
+                                rest.info?.sla?.deliveryTime < 30
+                                    ? <RestaurantCardFast resData={rest}/> : <RestCard  resData={rest}/>
+                            }
+                        </Link>
                     })
 
                 }
