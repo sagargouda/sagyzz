@@ -77,7 +77,7 @@ export default function Body() {
                 </div>
 
             </div>
-            <div className="body-container">
+            <div className="body-container tw-mx-6/12">
                 {
                     filterRests.length === 0 ? (
                         <h1 className="not-found">Sorry, we couldn't find any results for "{name}"</h1>
