@@ -1,7 +1,9 @@
 import './RestCard.css';
 
 
+
  function RestCard({resData}){
+
     return(
         <>
             <div className="container">
@@ -18,8 +20,6 @@ import './RestCard.css';
                     <h3>{resData.info?.name.length > 12 ? resData?.info?.name.slice(0,20) : resData?.info?.name }</h3>
                     <h5><span className="publish">{resData.info?.cuisines.length > 3 ? resData.info?.cuisines.splice(3,resData.info?.cuisines.length-1) : resData.info?.cuisines.join(',')  }</span></h5>
                     <h2> {resData.info.avgRating}⭐</h2>
-                    <p>
-                    </p>
                 </div>
             </div>
 

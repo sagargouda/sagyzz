@@ -1,48 +1,57 @@
 
-.header-container{
+.header-container {
     height: 20%;
     position: relative;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    justify-content: space-between;
 }
 
-.logo-container{
+.logo-container {
     height: 90%;
     width: 30%;
     position: absolute;
     top: 1rem;
     left: 1rem;
 }
-.logo{
+
+.logo {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease-in-out;
     border-radius: 10rem;
     cursor: pointer;
+}
 
+.logo-container:hover .logo {
+    transform: scale(1.05) rotateY(360deg);
 }
-.logo-container:hover .logo{
-    transform: scale(1.05)  rotateY(360deg);
-}
-.nav-container{
-    width: 40%;
-}
-.nav-container__list {
+
+.nav-container {
+    width: 70%; /* Adjust the width as needed */
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
+    align-items: center; /* Added align-items to center items vertically */
 }
-.nav-container__item{
+
+.nav-container__list {
     list-style: none;
-    font-size: 1.9rem;
-   cursor: pointer;
+    display: flex;
+    flex-direction: row;
 }
-.nav-container__item:hover{
+
+.nav-container__item {
+    font-size: 1.9rem;
+    cursor: pointer;
+}
+
+.nav-container__item:hover {
     color: red;
 }
 
-.nav-link{
+.nav-link {
     text-decoration: none;
     color: #333;
     font-weight: bold;
@@ -57,4 +66,40 @@
 .nav-link.active {
     background-color: #04AA6D;
     color: white;
+}
+
+/* Add styles for the toggle button */
+.toggle-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Add styles for the mobile nav container */
+@media screen and (max-width: 600px) {
+    .nav-container {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav-container.show {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .toggle-btn {
+        display: block;
+        margin: 10px 1rem 10px 0; /* Adjust the margin as needed */
+    }
+
+    .nav-container__item {
+        margin: 2px 0;
+        font-size: 1rem;
+    }
+    .nav-container__list {
+        flex-direction: column; /* Align items vertically */
+        align-items: flex-end; /* Align items to the right */
+        font-size: 1rem;
+    }
 }
