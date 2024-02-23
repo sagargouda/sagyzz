@@ -8,7 +8,6 @@ import {useState} from "react";
 export default function RestMenu(){
     const {resId} = useParams()
     const [showIndex , setShowIndex] = useState(null)
-    const [isClosed , setIsClosed] = useState(false)
 
 
     //  getting restuarant info from a custom hook
@@ -46,12 +45,8 @@ export default function RestMenu(){
 
             {
                 categories.map((category,index)=>{
-                    function handleClick(){
 
-                        setShowIndex(index)
-                        setIsClosed(prev=>!prev)
-                    }
-                    return <RestaurantCategory closed={isClosed} showItems={index === showIndex} onSelect={handleClick}  key={category?.card?.card?.title} data={category?.card?.card}/>
+                    return <RestaurantCategory   showItems={index === showIndex ? true : false} setShowIndex={()=>setShowIndex(index)} key={category?.card?.card?.title} data={category?.card?.card}/>
                 })
             }
 

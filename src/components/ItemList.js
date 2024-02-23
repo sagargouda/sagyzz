@@ -6,7 +6,8 @@ console.log(items)
         <div >
             {items.map((item,index)=>{
                 return (
-                    <div key={items?.card?.info?.id || index} className="tw-p-4 tw-m-2 tw-border-gray-150 tw-border-b-2 tw-text-left tw-flex tw-flex-row-reverse tw-justify-between ">
+                    <div key={items?.card?.info?.id || item?.card?.info?.name} className="tw-p-4 tw-m-2 tw-border-gray-150 tw-border-b-2 tw-text-left tw-flex tw-flex-row-reverse tw-justify-between ">
+                        {/*image */}
                         {
                             item?.card?.info?.imageId ?
                                 <img className="tw-w-40 tw-rounded-[1rem]" src={imageUrl + item?.card?.info?.imageId}
