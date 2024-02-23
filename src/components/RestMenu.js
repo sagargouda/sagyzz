@@ -11,21 +11,23 @@ export default function RestMenu(){
     const [isClosed , setIsClosed] = useState(false)
 
 
+    //  getting restuarant info from a custom hook
 
     const resInfo  = useRestaurantMenu(resId)
 
     if(resInfo === null){
         return <Shimmer/>
     }
-    const restaurantName = resInfo?.cards[0]?.card?.card?.info?.name;
-    const cuisines = resInfo?.cards[0]?.card?.card?.info?.cuisines;
+    const restaurantName = resInfo?.cards[2]?.card?.card?.info?.name;
+    const cuisines = resInfo?.cards[2]?.card?.card?.info?.cuisines;
 
 
 
-    console.log(resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+    console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
 
+    // filtering out item category among all cards
 
-    const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>{
+    const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>{
         return c.card?.card?.["@type"] ===
             "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     })
