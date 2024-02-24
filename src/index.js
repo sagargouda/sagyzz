@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestMenu from "./components/RestMenu";
 import './index.css';
+import Cart from "./components/Cart";
 
 import {Provider} from "react-redux";
 import appStore from "./utils/appStore";
@@ -49,6 +50,10 @@ const appRouter = createBrowserRouter(
                 {
                     path: 'restaurants/:resId',
                     element: <RestMenu/>
+                },
+                {
+                    path: '/cart',
+                    element: <Cart/>
                 }
             ],
             errorElement: <Error/>

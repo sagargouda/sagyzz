@@ -31,7 +31,7 @@ export default function Header() {
                     <li className="nav-container__item"><Link to="/" className="nav-link">Home</Link></li>
                     <li className="nav-container__item"><Link to="/about" className="nav-link">About</Link></li>
                     <li className="nav-container__item"><Link to="/contact" className="nav-link">Contact</Link></li>
-                    <li className="nav-container__item">  Cart <span className="font-bold"> ({cartItems.length} items)</span></li>
+                    <li className="nav-container__item"> <Link to="/cart"> Cart-({cartItems.length} items)</Link> </li>
                 </ul>
             </div>
         </div>
