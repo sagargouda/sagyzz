@@ -8,26 +8,22 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestMenu from "./components/RestMenu";
 import './index.css';
-import UserContext from "./utils/UserContext";
+
+import {Provider} from "react-redux";
+import appStore from "./utils/appStore";
 
 function AppLayout() {
-    const [userName , setUserName] = useState();
-
-    useEffect(()=>{
-        const data = {
-            name: ""
-        }
-        setUserName(data.name)
-    },[])
-
 
     return (
-        <UserContext.Provider value={{loggedInUser: userName,setUserName}}>
-            <div className="main-container">
-                <Header/>
-                <Outlet/>
-            </div>
-        </UserContext.Provider>
+        <Provider store={appStore}>
+
+                <div className="main-container">
+                    <Header/>
+                    <Outlet/>
+                </div>
+
+        </Provider>
+
 
     );
 }

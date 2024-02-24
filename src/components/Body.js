@@ -1,12 +1,11 @@
 import './Body.css';
 
 import RestCard , {withFastLabel} from "./RestCard";
-import React, {useCallback, useContext, useEffect, useState} from "react";
+import React, {useCallback,  useEffect, useState} from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
-import userContext from "../utils/UserContext";
+
 
 
 export default function Body() {
@@ -25,7 +24,7 @@ export default function Body() {
         setFilterRests(searchFilter);
     }, [name, rests]);
 
-const{loggedInUser ,setUserName} = useContext(UserContext)
+
 
     useEffect(()=>{
         fetchData()
@@ -72,15 +71,7 @@ const{loggedInUser ,setUserName} = useContext(UserContext)
         <>
             <div className="search">
                 <button onClick={() => handleTopRated()} className="button">Top rated Button</button>
-                <input
-                    placeholder="Your Name??"
-                    className="tw-p-2 tw-border tw-border-gray-300 tw-rounded"
-                    type="text"
-                    value={loggedInUser}
-                    onChange={(e)=>{
-                        setUserName(e.target.value)
-                    }}
-                />
+
                 <div className="searchInput">
                     <input type="text" placeholder="Search Restaurants Here" id="inp" value={name}
                            onChange={(e) => handleInputChange(e)}/>

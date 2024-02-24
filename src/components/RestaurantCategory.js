@@ -17,7 +17,7 @@ const RestaurantCategory = function ({data,setShowIndex,showItems}){
                 <div className="tw-flex tw-row-auto tw-justify-between tw-cursor-pointer "  onClick={()=>handleClick()}>
                     <span className="tw-text-3xl">{data.title.length > 25 ? data.title.slice(0,20) : data.title}<span
                         className="tw-m-2 tw-text-emerald-500">({data.itemCards.length})</span></span>
-                    <span>⬇️</span>
+                    {closed ? <span>⬇️</span> : <span>⬆️</span>}
                 </div>
                 {
                     showItems && (closed && <ItemList  items={data.itemCards} />)

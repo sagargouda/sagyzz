@@ -1,7 +1,15 @@
+import {useDispatch} from "react-redux";
+import {addItem} from "../utils/cartSlice";
+
 const imageUrl = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/"
 
 const ItemList = ({items}) => {
-console.log(items)
+    const dispatch = useDispatch()
+    function handleAddItem(item){
+        dispatch(addItem(item))
+
+    }
+// console.log(items)
     return (
         <div >
             {items.map((item,index)=>{
@@ -22,7 +30,7 @@ console.log(items)
                             <p className="tw-text-xs tw-overflow-hidden tw-w-10/12 tw-my-2 ">
                                 {item?.card?.info?.description ? item?.card?.info?.description : "No description available" }
                             </p>
-                            <button className="tw-px-3 tw-py-2 tw-bg-green-400 tw-rounded-lg tw-shadow-lg tw-my-2 tw-hover:tw-bg-amber-800 ">Add +</button>
+                            <button className="tw-px-3 tw-py-2 tw-bg-green-400 tw-rounded-lg tw-shadow-lg tw-my-2 tw-hover:tw-bg-amber-800 " onClick={()=>handleAddItem(item)}>Add +</button>
                         </div>
 
                     </div>
