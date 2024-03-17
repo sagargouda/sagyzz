@@ -22,11 +22,11 @@ export default function RestMenu(){
 
 
 
-    console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+    console.log(resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
 
     // filtering out item category among all cards
 
-    const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>{
+    const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>{
         return c.card?.card?.["@type"] ===
             "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     })
@@ -37,7 +37,7 @@ export default function RestMenu(){
 
            <h1 className="tw-font-extrabold tw-my-5 tw-text-6xl  tw-bg-black tw-text-white tw-py-4 tw-h-4/6 tw-sticky tw-top-0">{restaurantName}</h1>
             <p className="tw-font-bold tw-text-2xl ">
-                {cuisines.join(',')}
+                {cuisines?.join(',')}
             </p>
 
         {/*   building accordians   */}
