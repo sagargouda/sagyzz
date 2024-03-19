@@ -35,7 +35,7 @@ export default function Body() {
     }, [name,handleSearch]);
 
     async function fetchData(){
-     const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+     const response = await fetch("https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const json = await response.json();
      const ApiData = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
         setRests(ApiData)
